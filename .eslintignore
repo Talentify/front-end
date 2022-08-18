@@ -1,0 +1,2 @@
+cypress/integration/*.spec.js
+.mergify.yml

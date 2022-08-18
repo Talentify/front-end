@@ -1,0 +1,26 @@
+{
+  "extends": ["stylelint-config-standard", "stylelint-prettier/recommended"],
+  "plugins": ["stylelint-prettier", "stylelint-scss"],
+  "rules": {
+    "prettier/prettier": true,
+    "rule-empty-line-before": [
+      "always-multi-line",
+      {
+        "except": ["first-nested"]
+      }
+    ],
+    "color-hex-length": "long",
+    "at-rule-no-unknown": null,
+    "scss/at-rule-no-unknown": [
+      true,
+      { "ignoreAtRules": ["screen", "mixin", "include", "layer"] }
+    ],
+    "no-descending-specificity": null,
+    "selector-pseudo-element-no-unknown": [
+      true,
+      {
+        "ignorePseudoElements": ["v-deep"]
+      }
+    ]
+  }
+}

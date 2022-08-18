@@ -1,0 +1,24 @@
+{
+  "Vue TS Base": {
+    "prefix": "vue-ts-base",
+    "body": [
+      "<template>",
+      "  <div class=\"$TM_FILENAME_BASE\">$0</div>",
+      "</template>",
+      "",
+      "<script lang=\"ts\">",
+      "import { Vue, Component } from 'nuxt-property-decorator';",
+      "",
+      "@Component",
+      "export default class $TM_FILENAME_BASE extends Vue {}",
+      "</script>",
+      "",
+      "<style lang=\"scss\">",
+      ".$TM_FILENAME_BASE {",
+      "}",
+      "</style>",
+      ""
+    ],
+    "description": "Create vue class component template"
+  }
+}

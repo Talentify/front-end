@@ -1,0 +1,108 @@
+{
+  /*
+    Disable vs-code validators
+  */
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "files.eol": "\n",
+  "files.autoSave": "off",
+  "files.associations": {
+    ".sequelizerc": "javascript",
+    ".stylelintrc": "json",
+    ".prettierrc": "json",
+    "*.tsx": "typescriptreact"
+  },
+
+  /*
+    Stylelint
+  */
+  "stylelint.validate": ["css", "scss", "vue"],
+
+  /*
+    Editor
+  */
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.tabSize": 2,
+  "editor.fontLigatures": true,
+  "editor.cursorWidth": 0,
+  "editor.rulers": [80, 120],
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "editor.minimap.enabled": true,
+  "editor.minimap.maxColumn": 80,
+  "editor.minimap.renderCharacters": false,
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.semanticHighlighting.enabled": false,
+  "editor.suggestSelection": "first",
+  "editor.links": true,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": ["source.formatDocument", "source.fixAll.eslint"],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  /*
+    Prettier
+  */
+  "prettier.enable": true,
+  "prettier.htmlWhitespaceSensitivity": "strict",
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "none",
+  "prettier.requireConfig": true,
+  "prettier.endOfLine": "lf",
+  "prettier.bracketSpacing": false,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  /*
+    Vetur
+  */
+  "vetur.validation.style": false,
+  "vetur.format.defaultFormatter.html": "prettier",
+  "vetur.experimental.templateInterpolationService": true,
+  "vetur.format.defaultFormatterOptions": {
+    "js-beautify-html": {
+      "wrap_attributes": "auto"
+    }
+  },
+
+  /*
+    ESlint
+  */
+  "eslint.run": "onType",
+  "eslint.probe": ["javascript", "typescript", "html", "vue", "markdown"],
+  "eslint.validate": ["javascript", "typescript", "vue"],
+
+  "tailwindCSS.emmetCompletions": true,
+  "breadcrumbs.enabled": true,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "npm.packageManager": "yarn",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false,
+
+  /*
+    Search
+  */
+  "search.exclude": {
+    "**/.git": true,
+    "**/.npmrc": true,
+    "**/.vscode": true,
+    "**/.yarn": true,
+    "**/.yarnrc.yml": true,
+    "**/yarn.lock": true
+  },
+
+  /*
+    Source Control
+  */
+  "scm.defaultViewMode": "tree"
+}
