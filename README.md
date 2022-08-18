@@ -1,3 +1,6 @@
+![Talentify-Logo-Dark](.github/logo-light.svg#gh-dark-mode-only)
+![Talentify-Logo-Light](.github/logo.svg#gh-light-mode-only)
+
 # Talentify - Front-end Development Guide
 
 # Objetivos do Guia
