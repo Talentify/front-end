@@ -3,6 +3,11 @@
 
 Bem vindo ao repositório do time de Front-end da Talentify!
 
+# Conteúdos
+
+- [Objetivos](#objetivos-do-guia)
+- [Problemas conhecidos](./docs/troubleshooting.md)
+
 # Objetivos do Guia
 
 Este guia de desenvolvimento tem o objetivo de melhorar significativamente a qualidade do código do projeto.
