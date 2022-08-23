@@ -1,0 +1,14 @@
+{
+  "name": "@talentify/eslint-config",
+  "version": "1.0.0",
+  "description": "ESlint config user by Talentify Front-end Team",
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "@nuxtjs/eslint-config-typescript": "^10.0.0"
+  },
+  "peerDependencies": {
+    "eslint": "^8.15.0"
+  }
+}
