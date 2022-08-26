@@ -1,0 +1,51 @@
+name: Npm Publish Talentify Front-end Rules Package
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    name: Build Setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repo
+        uses: actions/checkout@v3
+
+      - name: Node setup
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Npm install in CI
+        run: npm ci
+
+      - name: Npm Test
+        run: npm test
+
+  publish-eslint-package:
+    needs: build
+    name: Push Eslint Package to Npm
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: 'packages/eslint-config'
+
+    steps:
+      - name: Checkout the repo
+        uses: actions/checkout@v3
+
+      - name: Node setup Npm Registry
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: https://registry.npmjs.org/
+
+      - name: Npm install in CI
+        run: npm ci
+
+      - name: Publish Package
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}
