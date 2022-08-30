@@ -268,7 +268,7 @@ registerUser() {
 }
 ```
 
-- Sempre priorize a utilização unidades relativas, como `REM`, `%`, `vh`, vw, etc. Utilize unidades absolutas apenas para situações pontuais estéticas que não alterem a acessibilidade ou responsividade;
+- Sempre priorize a utilização unidades relativas, como `REM`, `%`, `vh`, vw, etc. Priorizar `REM` ao invés de `EM` para manter a consistência dos componentes. Utilize unidades absolutas apenas para situações pontuais estéticas que não alterem a acessibilidade ou responsividade;
 
 ```scss
 // errado
