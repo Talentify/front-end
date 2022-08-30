@@ -7,6 +7,7 @@ Bem vindo ao repositório do time de Front-end da Talentify!
 
 - [Objetivos](#objetivos-do-guia)
 - [Problemas conhecidos](./docs/troubleshooting.md)
+- [CSS e SCSS](#css-e-scss)
 
 # Objetivos do Guia
 
