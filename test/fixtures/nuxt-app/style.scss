@@ -1,0 +1,70 @@
+.main {
+  display: flex;
+  background-color: #aaffff;
+
+  &__primary {
+    width: 100%;
+    height: 100%;
+    color: #212121;
+    font-family: 'Courier New', Courier, monospace;
+  }
+}
+
+.primary {
+  width: 660px;
+  max-width: 100%;
+  min-height: 600px;
+  padding: 40px;
+  margin: auto;
+  border-radius: 20px;
+  box-shadow: 10px 10px 40px rgb(0 0 0 / 6%);
+}
+
+a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  box-shadow: -20px -11px 19px 5px rgb(0 0 0 / 50%);
+  color: black;
+  transform: scale(1);
+}
+
+.recess {
+  position: relative;
+  display: block;
+  width: 320px;
+  box-sizing: border-box;
+  flex: 1 1 auto;
+  order: 1;
+  background-color: slategray;
+  font-size: 1.5rem;
+  grid-gap: 16px;
+  pointer-events: all;
+  transition: opacity 300ms ease;
+}
+
+#demo {
+  box-shadow: -20px -11px 19px 5px rgb(0 0 0 / 50%);
+  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.container {
+  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-padding: 20px;
+  scroll-snap-type: x mandatory;
+}
+
+img {
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}

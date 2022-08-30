@@ -1,0 +1,4 @@
+{
+  "root": true,
+  "extends": ["@talentify/eslint-config"]
+}

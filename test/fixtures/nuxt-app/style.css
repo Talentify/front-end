@@ -1,0 +1,14 @@
+.main {
+  display: flex;
+  background-color: #aaffff;
+}
+
+.main > .primary {
+  color: #212121;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.primary {
+  color: #aaffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
