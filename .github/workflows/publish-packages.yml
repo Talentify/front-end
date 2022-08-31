@@ -25,12 +25,16 @@ jobs:
 
   publish-eslint-package:
     needs: build
-    name: Push Eslint Package to Npm
+    name: Publish Npm Eslint Package
     runs-on: ubuntu-latest
+
+    stratregy:
+      matrix:
+        package: [eslint-config, prettier-config, stylelint-config, typescript-config]
 
     defaults:
       run:
-        working-directory: 'packages/eslint-config'
+        working-directory: packages/${{ matrix.package }}
 
     steps:
       - name: Checkout the repo
@@ -45,7 +49,14 @@ jobs:
       - name: Npm install in CI
         run: npm ci
 
-      - name: Publish Package
+      - name: Get the package version
+        id: get_version
+        run: echo ::set-output name=VERSION::${GITHUB_REF/refs/tags/}
+
+      - name: Update package version
+        run: npm version ${{ steps.get_version.output.VERSION }} --no-git-tag-version
+
+      - name: Publish ${{ matrix.package }} package
         run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}
