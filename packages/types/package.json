@@ -1,0 +1,12 @@
+{
+  "name": "@talentify/types",
+  "version": "1.0.0",
+  "description": "Default Types used by Talentify Front-end Team",
+  "files": [
+    "**/*.d.ts"
+  ],
+  "peerDependencies": {
+    "dotenv": "^16.0.1",
+    "vue": "^2.6.0"
+  }
+}

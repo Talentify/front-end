@@ -14,21 +14,10 @@
     "experimentalDecorators": true,
     "baseUrl": ".",
     "paths": {
+      "~/*": ["./*"],
       "@/*": ["./*"]
     },
-    "types": [
-      "@types/node",
-      "@nuxt/types",
-      "@nuxtjs/pwa",
-      "@nuxtjs/sentry",
-      "nuxt-i18n",
-      "@nuxtjs/dayjs",
-      "@nuxtjs/device",
-      "@types/jest",
-      "cookie-universal-nuxt/types",
-      "@nuxtjs/axios"
-    ],
-    "typeRoots": ["./types", "./node_modules/@types"]
+    "types": ["@types/node", "@nuxt/types"]
   },
-  "exclude": ["node_modules", ".nuxt", "dist", "**/*.spec.ts", "**/default.vue"]
+  "exclude": ["node_modules"]
 }

@@ -17,7 +17,8 @@
   /*
     Stylelint
   */
-  "stylelint.validate": ["css", "scss", "vue"],
+  "stylelint.enable": true,
+  "stylelint.validate": ["css", "postcss", "scss", "vue"],
 
   /*
     Editor
@@ -38,7 +39,11 @@
   "editor.suggestSelection": "first",
   "editor.links": true,
   "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": ["source.formatDocument", "source.fixAll.eslint"],
+  "editor.codeActionsOnSave": {
+    "source.formatDocument": true,
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
+  },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
 
   /*
@@ -47,10 +52,14 @@
   "prettier.enable": true,
   "prettier.htmlWhitespaceSensitivity": "strict",
   "prettier.singleQuote": true,
-  "prettier.trailingComma": "none",
+  "prettier.trailingComma": "es5",
   "prettier.requireConfig": true,
   "prettier.endOfLine": "lf",
   "prettier.bracketSpacing": false,
+  "prettier.arrowParens": "always",
+  "prettier.semi": true,
+  "prettier.useTabs": false,
+  "prettier.tabWidth": 2,
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -66,6 +75,7 @@
   */
   "vetur.validation.style": false,
   "vetur.format.defaultFormatter.html": "prettier",
+  "vetur.format.defaultFormatter.scss": "prettier",
   "vetur.experimental.templateInterpolationService": true,
   "vetur.format.defaultFormatterOptions": {
     "js-beautify-html": {
@@ -85,6 +95,12 @@
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "npm.packageManager": "yarn",
+
+  /*
+    TypeScript & JavaScript
+  */
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false,
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false,
@@ -104,5 +120,9 @@
   /*
     Source Control
   */
-  "scm.defaultViewMode": "tree"
+  "scm.defaultViewMode": "tree",
+
+  "postcssSorting.config": {
+    "properties-order": "alphabetical"
+  }
 }

@@ -7,6 +7,7 @@ Bem vindo ao repositório do time de Front-end da Talentify!
 
 - [Objetivos](#objetivos-do-guia)
 - [Problemas conhecidos](./docs/troubleshooting.md)
+- [CSS e SCSS](#css-e-scss)
 
 # Objetivos do Guia
 
@@ -210,6 +211,44 @@ setTimeout(() => {}, FIVE_MINUTES_IN_MILLISECONDS);
 - Para Vue 2, utilizar abordagem do `vue-class-component` utilizando a dependência `nuxt-class-decorators`;
 - Utilizar SCSS para styles;
 
+- Para classes dinamicas, criar getters para elementos que retornam a listagem de classes necessárias.
+
+> Por que? Adicionar classes dinamicas diretamente no template pode tornar o template confuso, retornar isso como uma computed deixa o código mais limpo e compreensível.
+
+```vue
+<!-- bad -->
+<template>
+  <button
+    :class="{
+      isFalse: false,
+      isTrue: true,
+    }"
+  >
+    <span>Foo</span>
+  </button>
+</template>
+
+<!-- good -->
+<template>
+  ...
+  <button :class="buttonClassObject">
+    <span>Foo</span>
+  </button>
+  ...
+</template>
+
+<script>
+...
+get buttonClassObject(): Record<string, boolean> {
+  return {
+    'isFalse': false,
+    'isTrue': true,
+  }
+}
+...
+</script>
+```
+
 ## Ordenação de atributos em Templates
 
 Os atributos de elementos e componentes devem ser distribuídos em ordem alfabética e agrupados na seguinte ordem:
@@ -268,7 +307,7 @@ registerUser() {
 }
 ```
 
-- Sempre priorize a utilização unidades relativas, como `REM`, `%`, `vh`, vw, etc. Utilize unidades absolutas apenas para situações pontuais estéticas que não alterem a acessibilidade ou responsividade;
+- Sempre priorize a utilização unidades relativas, como `REM`, `%`, `vh`, vw, etc. Priorizar `REM` ao invés de `EM` para manter a consistência dos componentes. Utilize unidades absolutas apenas para situações pontuais estéticas que não alterem a acessibilidade ou responsividade;
 
 ```scss
 // errado
@@ -380,6 +419,8 @@ NUNCA utilize mais que 3 níveis aninhados! Se chegar nesse nível, provavelment
 </div>
 ```
 
+# Vuex e camada de dados
+
 # Arquitetura
 
 ## Diretório de features
@@ -389,6 +430,10 @@ NUNCA utilize mais que 3 níveis aninhados! Se chegar nesse nível, provavelment
 # Referências
 
 [https://github.com/ryanmcdermott/clean-code-javascript](https://github.com/ryanmcdermott/clean-code-javascript)
+
+[Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
+
+[Airbnb CSS / Sass Guide](https://github.com/airbnb/css)
 
 [vue/attributes-order | eslint-plugin-vue](https://eslint.vuejs.org/rules/attributes-order.html)
 
