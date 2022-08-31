@@ -1,0 +1,6 @@
+{
+  "extends": "@talentify/typescript-config",
+  "compilerOptions": {
+    "typeRoots": ["@talentify/types", "./node_modules/@types"]
+  }
+}

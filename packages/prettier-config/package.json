@@ -1,0 +1,9 @@
+{
+  "name": "@talentify/prettier-config",
+  "version": "1.0.0",
+  "description": "Prettier config used by Talentify Front-end Team",
+  "main": "index.json",
+  "files": [
+    "index.js"
+  ]
+}

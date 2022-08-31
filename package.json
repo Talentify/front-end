@@ -1,13 +1,21 @@
 {
-  "name": "front-end",
-  "license": "UNLICENSED",
+  "name": "@talentify/front-end",
+  "private": true,
+  "license": "MIT",
   "packageManager": "yarn@3.2.2",
+  "prettier": "./packages/prettier-config",
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "test/fixtures/*"
   ],
+  "scripts": {
+    "release": "lerna publish"
+  },
   "devDependencies": {
-    "eslint": "^8.22.0",
+    "eslint": "^8.15.0",
     "lerna": "^5.4.3",
+    "prettier": "^2.7.1",
+    "stylelint": "^14.11.0",
     "vitest": "^0.22.1"
   }
 }

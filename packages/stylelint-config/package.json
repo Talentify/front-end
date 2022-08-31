@@ -1,0 +1,25 @@
+{
+  "name": "@talentify/stylelint-config",
+  "version": "1.0.0",
+  "description": "Stylelint config used by Talentify Front-end Team",
+  "main": "index.json",
+  "dependencies": {
+    "postcss-html": "^1.5.0",
+    "stylelint-config-clean-order": "^0.9.0",
+    "stylelint-config-idiomatic-order": "^8.1.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-property-sort-order-smacss": "^9.0.0",
+    "stylelint-config-recess-order": "^3.0.0",
+    "stylelint-config-standard-scss": "^5.0.0",
+    "stylelint-config-standard-vue": "^1.0.0",
+    "stylelint-order": "^5.0.0",
+    "stylelint-prettier": "^2.0.0",
+    "stylelint-scss": "^4.3.0"
+  },
+  "peerDependencies": {
+    "postcss": "^8.4.16",
+    "postcss-scss": "^4.0.4",
+    "prettier": "^2.7.1",
+    "stylelint": "^14.11.0"
+  }
+}

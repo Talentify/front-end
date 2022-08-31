@@ -1,0 +1,11 @@
+{
+  "name": "@talentify/typescript-config",
+  "version": "1.0.0",
+  "description": "TypeScript config used by Talentify Front-end Team",
+  "files": [
+    "tsconfig.json"
+  ],
+  "peerDependencies": {
+    "@nuxt/types": "^2.15.8"
+  }
+}
