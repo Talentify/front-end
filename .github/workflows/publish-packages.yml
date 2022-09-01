@@ -20,7 +20,7 @@ jobs:
       - name: Install Dependencies
         run: yarn install --frozen-lockfile
 
-  publish-eslint-package:
+  publish-package:
     needs: build
     name: Publish Npm Package
     runs-on: ubuntu-latest
