@@ -1,0 +1,56 @@
+name: Npm Publish Talentify Front-end Rules Package
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    name: Build Setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repo
+        uses: actions/checkout@v3
+
+      - name: Node setup
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+
+  publish-eslint-package:
+    needs: build
+    name: Publish Npm Package
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        package: [eslint-config, prettier-config, stylelint-config, typescript-config]
+
+    defaults:
+      run:
+        working-directory: packages/${{ matrix.package }}
+
+    steps:
+      - name: Checkout the repo
+        uses: actions/checkout@v3
+
+      - name: Node setup Npm Registry
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: https://registry.npmjs.org/
+
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Get the package version
+        id: get_version
+        run: echo ::set-output name=VERSION::${GITHUB_REF/refs/tags/}
+
+      - name: Publish ${{ matrix.package }} package
+        run: yarn publish --tag ${{ steps.get_version.output.VERSION }} --access public
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}
