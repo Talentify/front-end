@@ -17,7 +17,7 @@ jobs:
         with:
           node-version: 16
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: yarn install
 
   publish-package:
@@ -43,14 +43,14 @@ jobs:
           node-version: 16
           registry-url: https://registry.npmjs.org/
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: yarn install
 
       - name: Get the package version
         id: get_version
-        run: echo ::set-output name=VERSION::${GITHUB_REF/refs/tags/}
+        run: echo ::set-output name=VERSION::${GITHUB_REF#/refs/tags/}
         
-      - name: Install Dependencies
+      - name: Change package version
         run: npm version ${{ steps.get_version.output.VERSION }} --no-git-tag-version
 
       - name: Publish ${{ matrix.package }} package
