@@ -49,8 +49,11 @@ jobs:
       - name: Get the package version
         id: get_version
         run: echo ::set-output name=VERSION::${GITHUB_REF/refs/tags/}
+        
+      - name: Install Dependencies
+        run: npm version ${{ steps.get_version.output.VERSION }} --no-git-tag-version
 
       - name: Publish ${{ matrix.package }} package
-        run: yarn npm publish --tag ${{ steps.get_version.output.VERSION }} --access public
+        run: npm publish --tag ${{ steps.get_version.output.VERSION }} --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}
