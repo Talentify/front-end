@@ -45,15 +45,11 @@ jobs:
 
       - name: Install dependencies
         run: yarn install
-
-      - name: Get the package version
-        id: get_version
-        run: echo ::set-output name=VERSION::${GITHUB_REF#/refs/tags/}
         
       - name: Change package version
-        run: npm version ${{ steps.get_version.output.VERSION }} --no-git-tag-version
+        run: npm version ${{ github.event.release.tag_name }} --no-git-tag-version
 
       - name: Publish ${{ matrix.package }} package
-        run: npm publish --tag ${{ steps.get_version.output.VERSION }} --access public
+        run: npm publish --tag ${{ github.event.release.tag_name }} --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}
