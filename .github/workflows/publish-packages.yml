@@ -18,7 +18,7 @@ jobs:
           node-version: 16
 
       - name: Install Dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install
 
   publish-package:
     needs: build
@@ -44,7 +44,7 @@ jobs:
           registry-url: https://registry.npmjs.org/
 
       - name: Install Dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install
 
       - name: Get the package version
         id: get_version
