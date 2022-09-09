@@ -432,9 +432,8 @@ Exemplo:
 
 ```
 ├── components
-│   ├── Button
-│   │   ├── Button.vue
-│   │   ├── Button.stories.js
+│   ├── Button.vue
+│   ├── Button.stories.js
 ```
 
 ## Diretório de features
