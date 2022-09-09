@@ -8,6 +8,7 @@ Bem vindo ao repositório do time de Front-end da Talentify!
 - [Objetivos](#objetivos-do-guia)
 - [Problemas conhecidos](./docs/troubleshooting.md)
 - [CSS e SCSS](#css-e-scss)
+- [Arquitetura](#arquitetura)
 
 # Objetivos do Guia
 
@@ -423,9 +424,29 @@ NUNCA utilize mais que 3 níveis aninhados! Se chegar nesse nível, provavelment
 
 # Arquitetura
 
+## Diretório de componentes
+
+Os componentes de UI, que não possuem regras de negócios, devem ficar em `/components` juntamente com sua respectiva story.
+
+Exemplo:
+
+```
+├── components
+│   ├── Button
+│   │   ├── Button.vue
+│   │   ├── Button.stories.js
+```
+
 ## Diretório de features
 
-## Diretório de componentes
+Aqui ficarão os componentes com regra de negócio, aqueles que usarão os componentes de UI criados anteriormente. Features não precisam de story.
+
+```
+├── features
+│   ├── InputJobSearch
+│   │   ├── InputJobSearch.vue
+│   │   ├── AnotherNecessaryFile.vue
+```
 
 # Referências
 
