@@ -1,33 +1,18 @@
-name: Npm Publish Talentify Front-end Rules Package
+name: Npm Publish Talentify Flux Admin Auth Package
 
 on:
-  release:
-    types: [published]
+  push:
+    branches:
+      - main
 
 jobs:
-  build:
-    name: Build Setup
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout the repo
-        uses: actions/checkout@v3
-
-      - name: Node setup
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-
-      - name: Install dependencies
-        run: yarn install
-
   publish-package:
-    needs: build
     name: Publish Npm Package
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        package: [eslint-config, prettier-config, stylelint-config, typescript-config]
+        package: [auth]
 
     defaults:
       run:
@@ -35,21 +20,19 @@ jobs:
 
     steps:
       - name: Checkout the repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - name: Node setup Npm Registry
         uses: actions/setup-node@v3
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
+          scope: "@talentify"
 
       - name: Install dependencies
         run: yarn install
-        
-#       - name: Change package version
-#         run: npm version ${{ github.event.release.tag_name }} --no-git-tag-version --force
 
-      - name: Publish ${{ matrix.package }} package
-        run: npm publish --access public
+      - name: Publish auth package
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
